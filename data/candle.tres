@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Entity" load_steps=3 format=3 uid="uid://mcywy4i606rd"]
+
+[ext_resource type="PackedScene" uid="uid://br47ix11yb7uh" path="res://entities/Candle.tscn" id="1_1bfsn"]
+[ext_resource type="Script" uid="uid://clne5530nvhmy" path="res://data/entity.gd" id="1_08bpx"]
+
+[resource]
+script = ExtResource("1_08bpx")
+name = ""
+scene = ExtResource("1_1bfsn")
+amount = 0
+add_price = 5000
+upgrade_price = 10000
+lvl = 0
+click_amount = 50
+click_interval = 5.0
+multiplier = 0.2
+price_mult = 2.5
+click_mult = 0.0
+metadata/_custom_type_script = "uid://clne5530nvhmy"

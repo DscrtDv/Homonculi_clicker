@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Data" load_steps=8 format=3 uid="uid://twpjmn6y6y46"]
+
+[ext_resource type="Resource" uid="uid://7a1d231gxohl" path="res://data/clicker.tres" id="1_i7ejn"]
+[ext_resource type="Resource" uid="uid://mcywy4i606rd" path="res://data/candle.tres" id="1_munhg"]
+[ext_resource type="Script" uid="uid://bq8b112ludxft" path="res://data/data.gd" id="1_o2d6y"]
+[ext_resource type="Resource" uid="uid://bascf2s8qjhsf" path="res://data/cursor.tres" id="2_aapiu"]
+[ext_resource type="PackedScene" uid="uid://bhq3nubwu705j" path="res://ui/FloatingText.tscn" id="3_aapiu"]
+[ext_resource type="Resource" uid="uid://bar2t61kwmd2n" path="res://data/inventory.tres" id="3_munhg"]
+[ext_resource type="Resource" uid="uid://dv1f1thlw4a58" path="res://data/tentacle.tres" id="5_psoi4"]
+
+[resource]
+script = ExtResource("1_o2d6y")
+phase = 1
+phase_index = 0
+max_phase = 3
+cursor = ExtResource("2_aapiu")
+clickers = ExtResource("1_i7ejn")
+tentacles = ExtResource("5_psoi4")
+candles = ExtResource("1_munhg")
+inventory = ExtResource("3_munhg")
+floating_text = ExtResource("3_aapiu")
+metadata/_custom_type_script = "uid://bq8b112ludxft"

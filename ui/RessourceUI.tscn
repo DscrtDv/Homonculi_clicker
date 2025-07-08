@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://ef32n52xk2pr"]
+
+[ext_resource type="Script" uid="uid://dhq6gq7arup1x" path="res://ui/ressource_ui.gd" id="1_evgyv"]
+
+[node name="RessourceUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evgyv")
+
+[node name="Essence" type="Label" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 16.0
+offset_right = 736.0
+offset_bottom = 61.0
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 32
+text = "000 000 000"
+
+[node name="Ps" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 72.0
+offset_right = 672.0
+offset_bottom = 95.0
+text = "0 /s"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

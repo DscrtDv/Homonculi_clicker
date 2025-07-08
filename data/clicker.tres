@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Entity" load_steps=3 format=3 uid="uid://7a1d231gxohl"]
+
+[ext_resource type="Script" uid="uid://clne5530nvhmy" path="res://data/entity.gd" id="1_a2k2i"]
+[ext_resource type="PackedScene" uid="uid://bbeibwconr57i" path="res://entities/Clicker.tscn" id="1_d8cyu"]
+
+[resource]
+script = ExtResource("1_a2k2i")
+name = "Clicker"
+scene = ExtResource("1_d8cyu")
+amount = 0
+add_price = 10
+upgrade_price = 20
+lvl = 0
+click_amount = 1
+click_interval = 5.0
+multiplier = 0.0
+price_mult = 1.4
+click_mult = 0.95
+metadata/_custom_type_script = "uid://clne5530nvhmy"

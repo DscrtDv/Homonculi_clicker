@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://buqjy6d0boxdf"]
+
+[ext_resource type="PackedScene" uid="uid://qnyt438cuwfy" path="res://entities/Homunculus.tscn" id="1_4hvhl"]
+[ext_resource type="PackedScene" uid="uid://dxdg7oldfx3b0" path="res://system/RessourceManager.tscn" id="2_nadq4"]
+[ext_resource type="PackedScene" uid="uid://ef32n52xk2pr" path="res://ui/RessourceUI.tscn" id="3_s7p8s"]
+[ext_resource type="PackedScene" uid="uid://caio0o566w3yt" path="res://ui/UpgradeUI.tscn" id="4_6ufn8"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Homunculus" parent="." instance=ExtResource("1_4hvhl")]
+position = Vector2(648, 312)
+rotation = 0.00268859
+metadata/_edit_group_ = true
+
+[node name="RessourceManager" parent="." instance=ExtResource("2_nadq4")]
+
+[node name="RessourceUi" parent="." instance=ExtResource("3_s7p8s")]
+
+[node name="UpgradeUi" parent="." instance=ExtResource("4_6ufn8")]
+
+[connection signal="clicked" from="Homunculus" to="RessourceManager" method="_on_homunculus_clicked"]
+[connection signal="clicker_spawned" from="Homunculus" to="UpgradeUi" method="_on_clicker_spawned"]
+[connection signal="essence_updated" from="RessourceManager" to="RessourceUi" method="_on_essence_updated"]
+[connection signal="price_updated" from="RessourceManager" to="UpgradeUi" method="_on_ressource_manager_price_updated"]
+[connection signal="spawn_clicker" from="RessourceManager" to="Homunculus" method="_on_spawn_clicker"]

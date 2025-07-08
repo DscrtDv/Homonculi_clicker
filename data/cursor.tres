@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Entity" load_steps=2 format=3 uid="uid://bascf2s8qjhsf"]
+
+[ext_resource type="Script" uid="uid://clne5530nvhmy" path="res://data/entity.gd" id="1_jfqi1"]
+
+[resource]
+script = ExtResource("1_jfqi1")
+name = "Cursor"
+amount = 1
+add_price = 0
+upgrade_price = 50
+lvl = 0
+click_amount = 10000
+click_interval = 0.0
+multiplier = 0.0
+price_mult = 2.2
+click_mult = 0.0
+metadata/_custom_type_script = "uid://clne5530nvhmy"

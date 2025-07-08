@@ -1,0 +1,40 @@
+[gd_scene load_steps=9 format=3 uid="uid://dte6lnhpnxd76"]
+
+[ext_resource type="Texture2D" uid="uid://08ndoqrlsjhy" path="res://assets/tentacule1.png" id="1_t3cos"]
+[ext_resource type="Texture2D" uid="uid://t30gjh4uwqmh" path="res://assets/tentacule2.png" id="2_d3at2"]
+[ext_resource type="Texture2D" uid="uid://c3u30xuoolv6k" path="res://assets/tentacule3.png" id="3_7bv6k"]
+[ext_resource type="Texture2D" uid="uid://bxvudgxgqjjpg" path="res://assets/tentacule4.png" id="4_x11cu"]
+[ext_resource type="Texture2D" uid="uid://po245s78vab1" path="res://assets/tentacule5.png" id="5_ttdpn"]
+[ext_resource type="Texture2D" uid="uid://cwwiau1o5qo72" path="res://assets/tentacule6.png" id="6_cc5bn"]
+[ext_resource type="Script" uid="uid://dn25ntfmmc6ak" path="res://entities/tentacule.gd" id="7_d3at2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b75od"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t3cos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d3at2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7bv6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_x11cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ttdpn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cc5bn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="tentacule" type="AnimatedSprite2D" groups=["Tentacle"]]
+sprite_frames = SubResource("SpriteFrames_b75od")
+frame_progress = 0.759951
+script = ExtResource("7_d3at2")
