@@ -1,0 +1,38 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://c8njsrwt1n7ax"]
+
+[ext_resource type="Texture2D" uid="uid://c076ns8jk8hm6" path="res://assets/p_4/hm_4.png" id="1_3at5u"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3at5u")
+}],
+"loop": true,
+"name": &"blink",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3at5u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3at5u")
+}],
+"loop": true,
+"name": &"open_eye",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3at5u")
+}],
+"loop": true,
+"name": &"smile",
+"speed": 5.0
+}]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://qnyt438cuwfy"]
 
-[ext_resource type="SpriteFrames" uid="uid://dqto5mn611g2c" path="res://Animation/p3_homonculus.tres" id="1_ehs34"]
+[ext_resource type="SpriteFrames" uid="uid://dqto5mn611g2c" path="res://Animation/p3_homunculus.tres" id="1_ehs34"]
 [ext_resource type="Script" uid="uid://ce18d0dekmo4d" path="res://entities/homunculus.gd" id="2_ehs34"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7dvbt"]

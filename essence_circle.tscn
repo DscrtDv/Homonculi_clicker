@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7b1y05pc3su2"]
+
+[ext_resource type="Script" uid="uid://8786slwneo2p" path="res://essence_circle.gd" id="1_tluax"]
+
+[node name="EssenceCircle" type="Sprite2D"]
+script = ExtResource("1_tluax")

@@ -92,7 +92,6 @@ func _on_spawn_candle() -> void:
 
 func update_candles():
 	var candles = get_tree().get_nodes_in_group("Candle")
-	print(candles)
 	for child in get_children():
 		if child is Line2D:
 			child.queue_free()
@@ -110,7 +109,6 @@ func update_candles():
 		tween.tween_property(candles[i], "position", Vector2(x, y), 0.5)
 		
 	for i in range(candles.size()):
-		
 		var line = Line2D.new()
 		line.width = 2.0
 		line.z_index = -5
@@ -124,10 +122,6 @@ func update_candles():
 			# Draw line from last clicker back to the first
 			line.add_point(candles[i].position)
 			line.add_point(candles[0].position)
-			
-		var shader_material = ShaderMaterial.new()
-		shader_material.shader = line_shader
-		line.material = shader_material
 		
 		add_child(line)
 	
@@ -247,6 +241,8 @@ func phase_shift_anim():
 			var tents = get_tree().get_nodes_in_group("Tentacle")
 			for tent in tents:
 				tent.scale *= 2
+		4:
+			play("default")
 	start_animation_timer()
 
 #//------------------------------ BLINK ------------------------------//
