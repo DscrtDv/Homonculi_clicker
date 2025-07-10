@@ -8,7 +8,7 @@ extends Label
 func _ready():
 	text = "+" + str(cursor_data.click_amount)
 	modulate.a = 1.0
-	z_index = 5
+	z_index = game_data.zindex["UI"]
 	scale = Vector2(0.8, 0.8)
 
 	var tween = create_tween()

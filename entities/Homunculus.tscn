@@ -7,7 +7,6 @@
 radius = 64.0
 
 [node name="Homunculus" type="AnimatedSprite2D"]
-scale = Vector2(2, 2)
 sprite_frames = ExtResource("1_ehs34")
 animation = &"smile"
 script = ExtResource("2_ehs34")

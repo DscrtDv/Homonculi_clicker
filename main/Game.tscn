@@ -14,11 +14,11 @@ script = ExtResource("1_on5i6")
 script = ExtResource("2_34whc")
 zoom_speed = 0.5
 
-[node name="Homunculus" parent="." node_paths=PackedStringArray("clicker_timer") instance=ExtResource("1_4hvhl")]
+[node name="Homunculus" parent="." instance=ExtResource("1_4hvhl")]
 position = Vector2(640, 318)
 rotation = 0.00268859
-clicker_timer = NodePath("../ClickerTimer")
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="ClickerTimer" type="Timer" parent="."]
 wait_time = 5.0
@@ -28,19 +28,20 @@ script = ExtResource("6_34whc")
 
 [node name="RessourceUi" parent="UI" instance=ExtResource("3_s7p8s")]
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
 [node name="UpgradeUi" parent="UI" instance=ExtResource("4_6ufn8")]
 mouse_filter = 2
+metadata/_edit_lock_ = true
 
+[connection signal="clicker_spawned" from="." to="UI/UpgradeUi" method="_on_clicker_spawned"]
 [connection signal="clicked" from="Homunculus" to="UI/RessourceUi" method="_on_homunculus_clicked"]
-[connection signal="clicker_clicked" from="Homunculus" to="UI/RessourceUi" method="_on_homunculus_clicker_clicked"]
-[connection signal="clicker_spawned" from="Homunculus" to="UI/UpgradeUi" method="_on_clicker_spawned"]
 [connection signal="phase_switch" from="Homunculus" to="UI/UpgradeUi" method="_on_phase_switch"]
 [connection signal="timeout" from="ClickerTimer" to="ClickerTimer" method="_on_timeout"]
 [connection signal="essence_update" from="UI/RessourceUi" to="Homunculus" method="_on_ressource_ui_essence_update"]
-[connection signal="spawn_candle" from="UI/UpgradeUi" to="Homunculus" method="_on_spawn_candle"]
-[connection signal="spawn_clicker" from="UI/UpgradeUi" to="Homunculus" method="_on_spawn_clicker"]
+[connection signal="spawn_candle" from="UI/UpgradeUi" to="." method="_on_spawn_candle"]
+[connection signal="spawn_clicker" from="UI/UpgradeUi" to="." method="_on_spawn_clicker"]
 [connection signal="spawn_clicker" from="UI/UpgradeUi" to="ClickerTimer" method="_on_clicker_spawn"]
-[connection signal="spawn_tentacle" from="UI/UpgradeUi" to="Homunculus" method="_on_spawn_tentacle"]
+[connection signal="spawn_tentacle" from="UI/UpgradeUi" to="." method="_on_spawn_tentacle"]
 [connection signal="update_essence" from="UI/UpgradeUi" to="UI/RessourceUi" method="update_essence"]
 [connection signal="upgrade_clicker" from="UI/UpgradeUi" to="ClickerTimer" method="_on_upgrade_clicker"]

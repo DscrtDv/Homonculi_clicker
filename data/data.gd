@@ -22,3 +22,15 @@ var phases_data = {
 		],
 	"hm_rad": [12, 28.5, 64, 128]
 }
+
+# Candle Line Tentacle and FX are relative to the Homunculus
+var zindex = {
+	"background"	: -100,
+	"lines"			: -2,
+	"candle"		: -2,
+	"tentacle"		: -1,
+	"fx"			: -1,
+	"clicker"		: 0,
+	"homunculus"	: 1,
+	"UI"			: 100,
+}

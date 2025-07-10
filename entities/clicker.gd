@@ -8,19 +8,17 @@ signal clicker_clicked
 @onready var index = clicker_data.amount
 @onready var parent = get_parent()
 
-var current_scale = Vector2(1.0, 1.0)
-
+@onready var current_scale = scale
 
 func _ready() -> void:
 	play("default")
-	match game_data.phase:
-		3:
-			scale *= 2.0
-			current_scale = scale
-	print(parent.position)
+	# match game_data.phase:
+	# 	3:
+	# 		scale *= 2.0
+	# 		current_scale = scale
 
 func _on_timer_timeout() -> void:
-	emit_signal("clicker_clicked")
+	emit_signal("clicker_clicked", self)
 	click_animation()
 
 func click_animation():
@@ -43,7 +41,7 @@ func launch_circle_to_target(target_pos: Vector2) -> void:
 	var circle_sprite := Sprite2D.new()
 	circle_sprite.texture = circle_texture
 	circle_sprite.position = global_position
-	circle_sprite.z_index = -1  # Optional: make sure it appears on top
+	circle_sprite.z_index = game_data.zindex["fx"]  # Optional: make sure it appears on top
 
 	get_tree().current_scene.add_child(circle_sprite)
 
