@@ -26,7 +26,7 @@ var phases_data = {
 # Candle Line Tentacle and FX are relative to the Homunculus
 var zindex = {
 	"background"	: -100,
-	"lines"			: -2,
+	"lines"			: -3,
 	"candle"		: -2,
 	"tentacle"		: -1,
 	"fx"			: -1,

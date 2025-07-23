@@ -18,14 +18,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_viaf3")
 
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.015
+offset_left = 864.0
+offset_top = 84.0
+offset_right = 936.0
+offset_bottom = 303.9
+color = Color(0.446777, 0.446777, 0.446777, 1)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 z_index = 4
-layout_mode = 0
-offset_left = 1154.0
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
 offset_top = 64.0
-offset_right = 1192.0
-offset_bottom = 416.0
+offset_right = -56.0
+offset_bottom = 333.0
+grow_horizontal = 0
 theme_override_constants/separation = 15
+alignment = 1
 
 [node name="CursorLVL" type="TextureRect" parent="VBoxContainer"]
 layout_mode = 2
@@ -35,19 +50,19 @@ script = ExtResource("3_t8w50")
 
 [node name="Price" type="Label" parent="VBoxContainer/CursorLVL"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 31.0
+offset_left = 33.755
+offset_right = 63.755
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
 text = "10"
 
 [node name="Level" type="Label" parent="VBoxContainer/CursorLVL"]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
 layout_mode = 0
 offset_left = -8.0
-offset_top = 30.0
+offset_top = -5.0
 offset_right = 2.0
-offset_bottom = 42.0
+offset_bottom = 7.0
 theme_override_font_sizes/font_size = 8
 text = "0"
 
@@ -59,19 +74,19 @@ script = ExtResource("3_t8w50")
 
 [node name="Price" type="Label" parent="VBoxContainer/Clicker"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 31.0
+offset_left = 33.755
+offset_right = 63.755
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
 text = "10"
 
 [node name="Amount" type="Label" parent="VBoxContainer/Clicker"]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
 layout_mode = 0
 offset_left = -8.0
-offset_top = 30.0
+offset_top = -5.0
 offset_right = 2.0
-offset_bottom = 42.0
+offset_bottom = 7.0
 theme_override_font_sizes/font_size = 8
 text = "0"
 
@@ -83,19 +98,19 @@ script = ExtResource("3_t8w50")
 
 [node name="Price" type="Label" parent="VBoxContainer/ClickerLVL"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 31.0
+offset_left = 33.755
+offset_right = 63.755
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
 text = "10"
 
 [node name="LVL" type="Label" parent="VBoxContainer/ClickerLVL"]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
 layout_mode = 0
 offset_left = -8.0
-offset_top = 30.0
+offset_top = -5.0
 offset_right = 2.0
-offset_bottom = 42.0
+offset_bottom = 7.0
 theme_override_font_sizes/font_size = 8
 text = "0"
 
@@ -107,19 +122,19 @@ script = ExtResource("3_t8w50")
 
 [node name="Price" type="Label" parent="VBoxContainer/Tent"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 31.0
+offset_left = 33.755
+offset_right = 63.755
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
 text = "10"
 
 [node name="LVL" type="Label" parent="VBoxContainer/Tent"]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
 layout_mode = 0
 offset_left = -8.0
-offset_top = 30.0
+offset_top = -5.0
 offset_right = 2.0
-offset_bottom = 42.0
+offset_bottom = 7.0
 theme_override_font_sizes/font_size = 8
 text = "0"
 
@@ -131,19 +146,19 @@ script = ExtResource("3_t8w50")
 
 [node name="Price" type="Label" parent="VBoxContainer/TentLVL"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 31.0
+offset_left = 33.755
+offset_right = 63.755
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
 text = "10"
 
 [node name="LVL" type="Label" parent="VBoxContainer/TentLVL"]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
 layout_mode = 0
 offset_left = -8.0
-offset_top = 30.0
+offset_top = -5.0
 offset_right = 2.0
-offset_bottom = 42.0
+offset_bottom = 7.0
 theme_override_font_sizes/font_size = 8
 text = "0"
 
@@ -156,19 +171,19 @@ script = ExtResource("3_t8w50")
 
 [node name="Price" type="Label" parent="VBoxContainer/Candle"]
 layout_mode = 0
-offset_left = 42.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 31.0
+offset_left = 33.755
+offset_right = 63.755
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
 text = "10"
 
 [node name="LVL" type="Label" parent="VBoxContainer/Candle"]
 modulate = Color(0.720467, 0.720468, 0.720467, 1)
 layout_mode = 0
 offset_left = -8.0
-offset_top = 30.0
+offset_top = -5.0
 offset_right = 2.0
-offset_bottom = 42.0
+offset_bottom = 7.0
 theme_override_font_sizes/font_size = 8
 text = "0"
 

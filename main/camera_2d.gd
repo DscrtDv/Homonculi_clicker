@@ -1,30 +1,40 @@
 extends Camera2D
 
-@export var zoom_speed := 0.1
-@export var min_zoom := 0.1
-@export var max_zoom := 5.0
-var zoom_tween: Tween
+@export var amplitude: Vector2 = Vector2(10, 5)
+@export var speed: Vector2 = Vector2(1, 1.5)
 
-func _ready():
-	set_pos()
+@export var mouse_follow_strength: float = 0.01  # How much camera moves toward mouse
+@export var mouse_max_offset: Vector2 = Vector2(5, 5)  # Maximum offset in pixels
+
+var time := 0.0
+var base_position := Vector2.ZERO
 
 func set_pos():
 	global_position =$"../Homunculus".global_position
+	global_position.y -= 200  # Adjust Y position to be above the homunculus
 
-#func _unhandled_input(event):
-	#if event is InputEventMouseButton:
-		#if event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			#zoom_camera(zoom_speed)
-		#elif event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			#zoom_camera(-zoom_speed)
-#
-#func zoom_camera(delta_zoom):
-	#var target_zoom = zoom + Vector2(delta_zoom, delta_zoom)
-	#target_zoom.x = clamp(target_zoom.x, min_zoom, max_zoom)
-	#target_zoom.y = clamp(target_zoom.y, min_zoom, max_zoom)
-#
-	#if zoom_tween and zoom_tween.is_running():
-		#zoom_tween.kill()
-#
-	#zoom_tween = create_tween()
-	#zoom_tween.tween_property(self, "zoom", target_zoom, 0.2).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+func _ready():
+	set_pos()
+	base_position = global_position
+
+func _process(delta):
+	time += delta
+
+	# Base floating offset
+	var offset_x = sin(time * speed.x) * amplitude.x
+	var offset_y = cos(time * speed.y) * amplitude.y
+	var float_offset = Vector2(offset_x, offset_y)
+
+	# Mouse-follow offset
+	var viewport_size = get_viewport().size
+	var mouse_pos = get_viewport().get_mouse_position()
+	var screen_center = viewport_size * 0.5
+
+	var mouse_offset = (mouse_pos - screen_center) * mouse_follow_strength
+
+	# Clamp offset to max
+	mouse_offset.x = clamp(mouse_offset.x, -mouse_max_offset.x, mouse_max_offset.x)
+	mouse_offset.y = clamp(mouse_offset.y, -mouse_max_offset.y, mouse_max_offset.y)
+
+	# Apply final position
+	global_position = base_position + float_offset + mouse_offset

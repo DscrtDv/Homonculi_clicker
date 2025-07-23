@@ -1,28 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://buqjy6d0boxdf"]
+[gd_scene load_steps=9 format=3 uid="uid://buqjy6d0boxdf"]
 
 [ext_resource type="PackedScene" uid="uid://qnyt438cuwfy" path="res://entities/Homunculus.tscn" id="1_4hvhl"]
 [ext_resource type="Script" uid="uid://crwcbve7gceqf" path="res://main/game.gd" id="1_on5i6"]
 [ext_resource type="Script" uid="uid://bq2jsxk0a7tar" path="res://main/camera_2d.gd" id="2_34whc"]
 [ext_resource type="PackedScene" uid="uid://ef32n52xk2pr" path="res://ui/RessourceUI.tscn" id="3_s7p8s"]
 [ext_resource type="PackedScene" uid="uid://caio0o566w3yt" path="res://ui/UpgradeUI.tscn" id="4_6ufn8"]
+[ext_resource type="PackedScene" uid="uid://drmso83sqgo4i" path="res://main/stars.tscn" id="4_on5i6"]
 [ext_resource type="Script" uid="uid://b07apkey3hqce" path="res://main/clicker_timer.gd" id="6_34whc"]
+[ext_resource type="PackedScene" uid="uid://c1at1vittdq1c" path="res://main/parallax_background.tscn" id="7_2dx66"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_on5i6")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("2_34whc")
-zoom_speed = 0.5
-
 [node name="Homunculus" parent="." instance=ExtResource("1_4hvhl")]
-position = Vector2(640, 318)
+position = Vector2(459, 269)
 rotation = 0.00268859
 metadata/_edit_group_ = true
-metadata/_edit_lock_ = true
 
 [node name="ClickerTimer" type="Timer" parent="."]
 wait_time = 5.0
 script = ExtResource("6_34whc")
+
+[node name="Stars" parent="." instance=ExtResource("4_on5i6")]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("7_2dx66")]
+scroll_base_offset = Vector2(1920, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_34whc")
+amplitude = Vector2(2, 5)
+speed = Vector2(1, 1.1)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

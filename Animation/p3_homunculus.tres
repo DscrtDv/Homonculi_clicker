@@ -1,6 +1,11 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dqto5mn611g2c"]
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dqto5mn611g2c"]
 
 [ext_resource type="Texture2D" uid="uid://dicj61pndtwxh" path="res://assets/p_3/hm_3.png" id="1_wtmmv"]
+[ext_resource type="Texture2D" uid="uid://cgieher3losee" path="res://normal_map_h3.tres" id="2_ijkt2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vr0t"]
+atlas = ExtResource("2_ijkt2")
+region = Rect2(0, 0, 128, 128)
 
 [resource]
 animations = [{
@@ -15,6 +20,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_wtmmv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vr0t")
 }],
 "loop": true,
 "name": &"default",

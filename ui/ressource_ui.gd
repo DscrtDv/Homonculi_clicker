@@ -24,15 +24,16 @@ func update_essence() -> void:
 	label.text = formatted_string
 	emit_signal("essence_update")
 
-func _on_homunculus_clicked ( node ) -> void:
-	var temp_amount : int = 0
-	match node.name:
-		"Clicker":
-			temp_amount = clicker_data.click_amount
-		"Homunculus":
-			temp_amount = cursor_data.click_amount
-		"Candle":
-			temp_amount = game_data.candles.click_amount
+func _on_homunculus_clicked(node) -> void:
+	var temp_amount: int = 0
+	
+	if node.name.begins_with("Clicker"):
+		temp_amount = clicker_data.click_amount
+	elif node.name == "Homunculus":
+		temp_amount = cursor_data.click_amount
+	elif node.name == "Candle":
+		temp_amount = game_data.candles.click_amount
+
 	inventory.essence += temp_amount * inventory.multiplier
 	update_essence()
 

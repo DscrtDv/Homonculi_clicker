@@ -4,6 +4,6 @@ extends Node2D
 
 
 func _ready() -> void:
-	print("Spawn Anchor Ready: HML: ", homunculus.position, " | Global: ", homunculus.global_position)
+	# print("Spawn Anchor Ready: HML: ", homunculus.position, " | Global: ", homunculus.global_position)
 	global_position = get_viewport_rect().size * 0.5
 	z_index = homunculus.z_index

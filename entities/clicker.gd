@@ -5,17 +5,14 @@ signal clicker_clicked
 @onready var clicker_data 	: Entity 	= game_data.clickers
 
 @export var trans_time : float = 0.2
-@onready var index = clicker_data.amount
+@onready var index = clicker_data.amount - 1
 @onready var parent = get_parent()
 
 @onready var current_scale = scale
 
 func _ready() -> void:
+	name = "Clicker_" + str(index)
 	play("default")
-	# match game_data.phase:
-	# 	3:
-	# 		scale *= 2.0
-	# 		current_scale = scale
 
 func _on_timer_timeout() -> void:
 	emit_signal("clicker_clicked", self)
@@ -46,7 +43,7 @@ func launch_circle_to_target(target_pos: Vector2) -> void:
 	get_tree().current_scene.add_child(circle_sprite)
 
 	var tween := create_tween()
-	tween.tween_property(circle_sprite, "global_position", target_pos, 1.0).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	tween.tween_property(circle_sprite, "global_position", target_pos, 1.5).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 	tween.tween_callback(Callable(circle_sprite, "queue_free"))
 
 func create_circle_texture(size: int, color: Color) -> ImageTexture:
@@ -54,7 +51,7 @@ func create_circle_texture(size: int, color: Color) -> ImageTexture:
 	image.fill(Color(0, 0, 0, 0))  # Transparent background
 
 	var center = Vector2(size / 2, size / 2)
-	var radius = size / 2
+	var radius = size / 2 * clicker_data.click_amount
 
 	for x in range(size):
 		for y in range(size):

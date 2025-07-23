@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://drmso83sqgo4i"]
+
+[ext_resource type="Script" uid="uid://bgt3hibyuaep6" path="res://main/stars.gd" id="1_kyt4e"]
+[ext_resource type="Texture2D" uid="uid://dnj53jmtn0paj" path="res://assets/stars/stars_bg.png" id="2_gomkf"]
+[ext_resource type="Texture2D" uid="uid://ged5wexygbb5" path="res://assets/stars/stars_stars_0.png" id="3_kyt4e"]
+[ext_resource type="Texture2D" uid="uid://ba6g2rnny72a1" path="res://assets/stars/stars_stars_1.png" id="4_e7v51"]
+[ext_resource type="Texture2D" uid="uid://dmhvbrukgywrs" path="res://assets/stars/stars_stars_2.png" id="5_k62bq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gomkf"]
+
+[node name="Stars" type="ParallaxBackground"]
+script = ExtResource("1_kyt4e")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(445, 477)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.44, 0.44, 0.44, 1)
+material = SubResource("CanvasItemMaterial_gomkf")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_gomkf")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+position = Vector2(445, 477)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer2"]
+modulate = Color(0.77, 0.77, 0.77, 0.784314)
+material = SubResource("CanvasItemMaterial_gomkf")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_kyt4e")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+position = Vector2(445, 477)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer3"]
+modulate = Color(0.84, 0.84, 0.84, 0.831373)
+material = SubResource("CanvasItemMaterial_gomkf")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("4_e7v51")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+position = Vector2(445, 477)
+motion_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer4"]
+modulate = Color(0.7, 0.7, 0.7, 0.866667)
+material = SubResource("CanvasItemMaterial_gomkf")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_k62bq")

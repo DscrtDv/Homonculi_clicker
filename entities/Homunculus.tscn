@@ -1,15 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://qnyt438cuwfy"]
+[gd_scene load_steps=6 format=3 uid="uid://qnyt438cuwfy"]
 
 [ext_resource type="SpriteFrames" uid="uid://dqto5mn611g2c" path="res://Animation/p3_homunculus.tres" id="1_ehs34"]
 [ext_resource type="Script" uid="uid://ce18d0dekmo4d" path="res://entities/homunculus.gd" id="2_ehs34"]
+[ext_resource type="Texture2D" uid="uid://c8debuwn4kn70" path="res://basic_light.webp" id="3_owdd7"]
+[ext_resource type="Texture2D" uid="uid://cgieher3losee" path="res://normal_map_h3.tres" id="4_yao23"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7dvbt"]
 radius = 64.0
 
 [node name="Homunculus" type="AnimatedSprite2D"]
 sprite_frames = ExtResource("1_ehs34")
-animation = &"smile"
+frame_progress = 0.00203462
 script = ExtResource("2_ehs34")
+metadata/_edit_lock_ = true
 
 [node name="Area2D" type="Area2D" parent="."]
 
@@ -22,8 +25,25 @@ shape = SubResource("CircleShape2D_7dvbt")
 wait_time = 3.0
 one_shot = true
 
+[node name="ClickTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(156, 51)
+scale = Vector2(1.17578, 0.988281)
+shadow_enabled = true
+texture = ExtResource("3_owdd7")
+texture_scale = 2.72
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(142, -1)
+texture = ExtResource("4_yao23")
+
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_mouse_exited"]
 [connection signal="timeout" from="RandomTimer" to="." method="_timer_timeout"]
 [connection signal="timeout" from="AnimationTimer" to="." method="_on_animation_timer_timeout"]
+[connection signal="timeout" from="ClickTimer" to="." method="_on_click_timer_timeout"]

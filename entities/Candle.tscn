@@ -22,6 +22,8 @@ animations = [{
 }]
 
 [node name="Candle" type="AnimatedSprite2D" groups=["Candle"]]
+position = Vector2(0, 8)
 sprite_frames = SubResource("SpriteFrames_a3b10")
 frame = 2
 frame_progress = 0.897427
+offset = Vector2(0, -8)

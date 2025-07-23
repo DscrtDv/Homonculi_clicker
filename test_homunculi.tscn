@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtuos3jwws2gc"]
+
+[ext_resource type="Script" uid="uid://r8yfabxvt1ub" path="res://test_homunculi.gd" id="1_7mpgm"]
+[ext_resource type="Texture2D" uid="uid://d0o2oc2xrlrl4" path="res://assets/Test/HM_3_Body.png" id="1_q62de"]
+[ext_resource type="Texture2D" uid="uid://duorvlv88kc4r" path="res://assets/Test/HM_3_Teeth.png" id="2_7mpgm"]
+[ext_resource type="Texture2D" uid="uid://bk3a8gky8uuto" path="res://assets/Test/HM_3_Mouth.png" id="3_lb41k"]
+[ext_resource type="Texture2D" uid="uid://8wkq4kwod1pg" path="res://assets/Test/HM_3_Shading1.png" id="4_uovj4"]
+[ext_resource type="Texture2D" uid="uid://ce3imk161c6aj" path="res://assets/Test/HM_3_Shading2.png" id="5_gdgpb"]
+[ext_resource type="Texture2D" uid="uid://c468d2dr1w62p" path="res://assets/Test/HM_3_Eye.png" id="6_mkkwl"]
+[ext_resource type="Texture2D" uid="uid://cm1jj8wss62hg" path="res://assets/Test/HM_3_iris.png" id="7_vnr5x"]
+[ext_resource type="Texture2D" uid="uid://dutcwtltpltel" path="res://assets/Test/HM_3_Shading3.png" id="8_6vo0u"]
+[ext_resource type="Script" uid="uid://dgg0vlkigdyj6" path="res://testcam.gd" id="10_lb41k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mpgm"]
+radius = 65.0
+
+[node name="TestHomunculi" type="ParallaxBackground"]
+script = ExtResource("1_7mpgm")
+
+[node name="Layer1" type="ParallaxLayer" parent="."]
+position = Vector2(696, 345)
+
+[node name="Body" type="Sprite2D" parent="Layer1"]
+texture = ExtResource("1_q62de")
+
+[node name="Layer2" type="ParallaxLayer" parent="."]
+position = Vector2(696, 345)
+motion_scale = Vector2(0.95, 0.95)
+
+[node name="Teeth" type="Sprite2D" parent="Layer2"]
+texture = ExtResource("2_7mpgm")
+
+[node name="Layer3" type="ParallaxLayer" parent="."]
+position = Vector2(696, 345)
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="Mouth" type="Sprite2D" parent="Layer3"]
+texture = ExtResource("3_lb41k")
+
+[node name="Shading1" type="Sprite2D" parent="Layer3"]
+texture = ExtResource("4_uovj4")
+
+[node name="Layer4" type="ParallaxLayer" parent="."]
+position = Vector2(696, 345)
+motion_scale = Vector2(0.85, 0.85)
+
+[node name="Shading2" type="Sprite2D" parent="Layer4"]
+texture = ExtResource("5_gdgpb")
+
+[node name="Eye" type="Sprite2D" parent="Layer4"]
+texture = ExtResource("6_mkkwl")
+
+[node name="Layer5" type="ParallaxLayer" parent="."]
+position = Vector2(696, 345)
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Iris" type="Sprite2D" parent="Layer5"]
+texture = ExtResource("7_vnr5x")
+
+[node name="Shading3" type="Sprite2D" parent="Layer5"]
+texture = ExtResource("8_6vo0u")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(696, 345)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_7mpgm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(648, 362)
+script = ExtResource("10_lb41k")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_mouse_exited"]

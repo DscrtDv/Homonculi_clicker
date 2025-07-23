@@ -137,12 +137,16 @@ func _on_ui_clicked(obj) -> void:
 		"TentLVL":
 			if (inventory.essence >= tent.data.upgrade_price):
 				inventory.essence -= tent.data.upgrade_price
+				inventory.multiplier -= tent.data.multiplier * tent.data.amount
 				tent.data.multiplier *= 1.5
+				inventory.multiplier += tent.data.multiplier * tent.data.amount
 				tent.data.upgrade_price = int(tent.data.upgrade_price * tent.data.price_mult)
 				tent.data.lvl += 1
 				#print("[TENT] Tents mult: ", tent.data.multiplier)
 		"Candle":
 			if (inventory.essence >= candle.data.add_price):
+				clicker.data.click_amount += 1
+				tent.data.click_amount += 1
 				inventory.essence -= candle.data.add_price
 				candle.data.add_price = int(candle.data.add_price * candle.data.price_mult)
 				candle.data.amount += 1

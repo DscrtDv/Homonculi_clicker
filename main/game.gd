@@ -5,10 +5,11 @@ extends Node2D
 @onready var tent_data 		: Entity 		= game_data.tentacles
 @onready var candle_data	: Entity		= game_data.candles
 
-@onready var homunculus     : AnimatedSprite2D 	= $Homunculus
-@onready var clicker_timer  : Timer 			= $ClickerTimer
-@onready var ressource_ui   : Control 			= $UI/RessourceUi
-@onready var upgrade_ui		: Control 			= $UI/UpgradeUI
+@onready var homunculus     : AnimatedSprite2D 	 = $Homunculus
+@onready var clicker_timer  : Timer 			 = $ClickerTimer
+@onready var ressource_ui   : Control 			 = $UI/RessourceUi
+@onready var upgrade_ui		: Control 			 = $UI/UpgradeUi
+@onready var parallax 		: ParallaxBackground = $ParallaxBackground
 
 var clickers : Array = []
 var clicker_rotation_speed 	= .2
@@ -24,6 +25,11 @@ var current_angle_candles = 0
 
 signal clicker_spawned(amount : int)
 
+func _ready() -> void:
+	print(ressource_ui)
+	print(upgrade_ui)
+	set_bg_position()
+
 func _process(delta: float) -> void:
 	current_angle_clickers += clicker_rotation_speed * delta
 	current_angle_tentacles += tentacle_rotation_speed * delta
@@ -37,11 +43,11 @@ func _process(delta: float) -> void:
 func _on_spawn_clicker() -> void:
 	var clicker = clicker_data.scene.instantiate()
 	clicker.connect("clicker_clicked", Callable(ressource_ui, "_on_homunculus_clicked"))
+
 	homunculus.add_child(clicker)
 	clicker.z_index = game_data.zindex["clicker"]
 	emit_signal("clicker_spawned", clicker_data.amount)
 	clickers = get_tree().get_nodes_in_group("Clicker")
-
 
 func _on_spawn_tentacle() -> void:
 	var tentacle = tent_data.scene.instantiate()
@@ -124,3 +130,8 @@ func update_entity ( nodes : Array, node_data : Entity, current_angle : float,
 		if face_center:
 			var desired_angle = angle + PI / 2
 			node.rotation = lerp_angle(node.rotation, desired_angle, damping)
+
+# ------------- Utils ------------
+
+func set_bg_position() -> void:
+	pass
